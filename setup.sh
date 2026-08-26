@@ -11,3 +11,6 @@ for dir in hypr waybar; do
     ln -sfn "$DOTFILES/$dir" "$target"
     echo "Linked $target -> $DOTFILES/$dir"
 done
+
+ln -sfn nvim ~/.config/nvim
+echo "Linked ~/.config/nvim -> nvim"
