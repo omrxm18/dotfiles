@@ -10,7 +10,6 @@
 
 -- See https://wiki.hypr.land/Configuring/Basics/Monitors/
 hl.monitor({ output = "eDP-1", mode = "1920x1080@60", position = "0x0", scale = 1, })
-hl.monitor({ output = "DP-3", mode = "1280x1024@75", position = "-1280x0", scale = 1, })
 
 ---------------------
 ---- MY PROGRAMS ----
@@ -30,7 +29,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("sleep 2.5 && hyprctl dispatch movecursor 9999 9999")
     hl.exec_cmd("sleep 3 && hyprctl dispatch movecursor 1 1")
     hl.exec_cmd("nm-applet")
-    hl.exec_cmd("waybar -c /home/omrxdev/.config/waybar/config.jsonc -s /home/omrxdev/.config/waybar/style.css")
+    hl.exec_cmd("waybar")
     hl.exec_cmd("hyprpaper")
     hl.exec_cmd("/usr/lib/hyprpolkitagent/hyprpolkitagent")
     hl.exec_cmd("mako")
@@ -126,6 +125,11 @@ hl.config({
         no_hardware_cursors = true,
         no_warps            = true,
     },
+    misc = {
+	force_default_wallpaper = 0,
+        disable_hyprland_logo = true,
+        disable_splash_rendering = true,
+    }
 })
 
 -- Default curves, see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Animations/#curves
