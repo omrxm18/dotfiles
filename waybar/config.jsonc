@@ -5,9 +5,9 @@
     "margin-left": 8,
     "margin-right": 8,
     "spacing": 2,
-
     "modules-left": [
-        "hyprland/workspaces"
+        "hyprland/workspaces",
+        "custom/rofi"
     ],
     "modules-right": [
         "tray",
@@ -17,28 +17,31 @@
         "memory",
         "temperature",
         "battery",
-	"keyboard-state",
-	"hyprland/language",
+        "keyboard-state",
+        "hyprland/language",
         "clock",
         "custom/power"
     ],
-
     "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
         "warp-on-scroll": false,
         "format": "{icon}",
         "format-icons": {
-    	    "1": "",
-    	    "2": "",
-    	    "3": "",
-    	    "4": "",
-    	    "5": "",
-    	    "active": "",
-    	    "default": ""
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": "",
+            "active": "",
+            "default": ""
         }
     },
-
+    "custom/rofi": {
+        "format": "󰀻",
+        "tooltip": false,
+        "on-click": "pkill wofi || wofi --show drun"
+    },
     "keyboard-state": {
         "numlock": true,
         "capslock": true,
@@ -48,7 +51,6 @@
             "unlocked": ""
         }
     },
-
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
@@ -56,42 +58,39 @@
             "deactivated": ""
         }
     },
-
     "tray": {
         "spacing": 10
     },
-
     "clock": {
         "timezone": "Africa/Cairo",
         "format": "{:%I:%M %p}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d}"
     },
-
     "cpu": {
         "format": "{usage}% ",
         "tooltip": false
     },
-
     "memory": {
         "format": "{}% "
     },
-
     "temperature": {
         "critical-threshold": 80,
         "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", ""]
+        "format-icons": [
+            "",
+            "",
+            ""
+        ]
     },
-
     "hyprland/language": {
-	"format": "{}",
-	"format-en": "EN",
-	"format-ar": "AR",
-	"tooltip": true,
-	"tooltip-format": "layout: {}",
-	"on-click": "hyprctl switchxkblayout current next"
+        "format": "{}",
+        "format-en": "EN",
+        "format-ar": "AR",
+        "tooltip": true,
+        "tooltip-format": "layout: {}",
+        "on-click": "hyprctl switchxkblayout current next"
     },
-
     "battery": {
         "states": {
             "warning": 30,
@@ -102,9 +101,14 @@
         "format-charging": "{capacity}% ",
         "format-plugged": "{capacity}% ",
         "format-alt": "{time} {icon}",
-        "format-icons": ["", "", "", "", ""]
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
     },
-
     "network": {
         "format-wifi": "{essid} ({signalStrength}%) ",
         "format-ethernet": "{ipaddr}/{cidr} ",
@@ -113,7 +117,6 @@
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
-
     "pulseaudio": {
         "format": "{volume}% {icon} {format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
@@ -128,11 +131,14 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", "", ""]
+            "default": [
+                "",
+                "",
+                ""
+            ]
         },
         "on-click": "pavucontrol"
     },
-
     "custom/power": {
         "format": "⏻",
         "tooltip": false,
@@ -146,4 +152,3 @@
         }
     }
 }
-

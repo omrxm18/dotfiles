@@ -77,7 +77,8 @@ window#waybar {
 #temperature,
 #battery {
     background: rgba(255, 255, 255, 0.02);
-    color: #8a8377; /* dim by default — no per-module rainbow */
+    color: #8a8377;
+    /* dim by default — no per-module rainbow */
 }
 
 /* -------------------- Workspaces -------------------- */
@@ -159,9 +160,11 @@ window#waybar {
 #battery.charging {
     color: #a3a68a;
 }
+
 #battery.warning:not(.charging) {
     color: #c9a35f;
 }
+
 #battery.critical:not(.charging) {
     color: #b06a55;
     background: rgba(176, 106, 85, 0.14);
@@ -181,10 +184,12 @@ window#waybar {
 #tray {
     padding: 4px 10px;
 }
-#tray > .passive {
+
+#tray>.passive {
     opacity: 0.5;
 }
-#tray > .needs-attention {
+
+#tray>.needs-attention {
     opacity: 1;
     background: rgba(176, 106, 85, 0.18);
 }
@@ -204,11 +209,22 @@ window#waybar {
     color: #d8a996;
 }
 
+/* ----------------------App Menu -----------------------*/
+#custom-rofi {
+    padding: 0 10px;
+    font-size: 16px;
+}
+
+#custom-rofi:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
 /* -------------------- Keyboard state -------------------- */
 
 #keyboard-state {
     color: #8a8377;
 }
+
 #keyboard-state label.locked {
     color: #c9a35f;
 }
