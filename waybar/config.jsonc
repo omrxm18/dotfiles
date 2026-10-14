@@ -143,7 +143,7 @@
         "format": "⏻",
         "tooltip": false,
         "menu": "on-click",
-        "menu-file": "/home/omrxm18/.config/waybar/power_menu.xml",
+        "menu-file": "~/.config/waybar/power_menu.xml",
         "menu-actions": {
             "shutdown": "shutdown",
             "reboot": "reboot",
