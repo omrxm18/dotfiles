@@ -4,12 +4,14 @@ hl.bind(vars.mainMod .. " + return", hl.dsp.exec_cmd(vars.terminal))
 hl.bind(vars.mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(vars.mainMod .. " + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 hl.bind(vars.mainMod .. " + E", hl.dsp.exec_cmd(vars.fileManager))
-hl.bind(vars.mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(vars.mainMod .. " + F", hl.dsp.exec_cmd(vars.menu))
+hl.bind(vars.mainMod .. " + C", hl.dsp.window.float({ action = "toggle" }))
+-- hl.bind(vars.mainMod .. " + F", hl.dsp.exec_cmd(vars.menu)) -- if you like wofi menus more
+hl.bind(vars.mainMod .. " + F", hl.dsp.exec_cmd("qs ipc call appdrawer toggle"))
 hl.bind(vars.mainMod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle only
+hl.bind(vars.mainMod .. " + O", hl.dsp.exec_cmd("qs ipc call dock pinActive")) -- pin to dock
 hl.bind(vars.mainMod .. " + P", hl.dsp.exec_cmd("grim ~/Pictures/screenshot_$(date +%s).png"))
 hl.bind(vars.mainMod .. " + SHIFT + P", hl.dsp.exec_cmd("grim -g \"$(slurp)\" ~/Pictures/screenshot_$(date +%s).png"))
-hl.bind("SUPER + R", hl.dsp.exec_cmd("cliphist list | wofi --dmenu | cliphist decode | wl-copy"))
+hl.bind(vars.mainMod .. " + V", hl.dsp.exec_cmd("cliphist list | wofi --dmenu | cliphist decode | wl-copy"))
 
 -- Move focus with mainMod + arrow keys
 hl.bind(vars.mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))
