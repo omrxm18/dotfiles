@@ -1,3 +1,4 @@
 **/cache/
 **/*.log
 hypr/hyprpaper.conf
+quickshell/state/dock.json

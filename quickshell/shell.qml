@@ -10,4 +10,5 @@ ShellRoot {
     Todo {}
     Wheel {}
     AppDrawer {}
+    Dock {}
 }
