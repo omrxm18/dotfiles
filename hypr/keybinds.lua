@@ -11,7 +11,7 @@ hl.bind(vars.mainMod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle only
 hl.bind(vars.mainMod .. " + O", hl.dsp.exec_cmd("qs ipc call dock pinActive")) -- pin to dock
 hl.bind(vars.mainMod .. " + P", hl.dsp.exec_cmd("grim ~/Pictures/screenshot_$(date +%s).png"))
 hl.bind(vars.mainMod .. " + SHIFT + P", hl.dsp.exec_cmd("grim -g \"$(slurp)\" ~/Pictures/screenshot_$(date +%s).png"))
-hl.bind(vars.mainMod .. " + V", hl.dsp.exec_cmd("cliphist list | wofi --dmenu | cliphist decode | wl-copy"))
+hl.bind(vars.mainMod .. " + V", hl.dsp.exec_cmd("qs ipc call clipboard toggle"))
 
 -- Move focus with mainMod + arrow keys
 hl.bind(vars.mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))

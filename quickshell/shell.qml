@@ -11,4 +11,5 @@ ShellRoot {
     Wheel {}
     AppDrawer {}
     Dock {}
+    Clipboard {}
 }
