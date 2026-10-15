@@ -31,7 +31,6 @@ Scope {
         else DesktopEntries.heuristicLookup(id)?.execute()
     }
 
-    // ---- state file ------------------------------------------------------
     FileView {
         id: file
         path: root.path
@@ -55,7 +54,6 @@ Scope {
         }
     }
 
-    // ---- IPC -------------------------------------------------------------
     IpcHandler {
         target: "dock"
         function pin(id: string): void { root.pin(id) }
@@ -68,7 +66,6 @@ Scope {
         }
     }
 
-    // ---- the dock --------------------------------------------------------
     PanelWindow {
         anchors.bottom: true            // only bottom anchored = centered horizontally
         margins.bottom: 8
@@ -94,7 +91,12 @@ Scope {
                     delegate: Item {
                         id: item
                         required property string modelData
-                        readonly property var entry: DesktopEntries.heuristicLookup(modelData)
+                        // reading .values makes this re-run once the desktop entry
+                        // database finishes loading (it's async at shell startup)
+                        readonly property var entry: {
+                            DesktopEntries.applications.values
+                            return DesktopEntries.heuristicLookup(modelData)
+                        }
                         readonly property bool running: root.appWindow(modelData) !== undefined
 
                         width: 40
